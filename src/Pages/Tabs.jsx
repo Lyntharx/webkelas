@@ -1,6 +1,5 @@
 import React, { useEffect } from "react"
 import PropTypes from "prop-types"
-import SwipeableViews from "react-swipeable-views"
 import { useTheme } from "@mui/material/styles"
 import AppBar from "@mui/material/AppBar"
 import Tabs from "@mui/material/Tabs"
@@ -132,21 +131,13 @@ export default function FullWidthTabs() {
 						/>
 					</Tabs>
 				</AppBar>
-				<SwipeableViews
-					axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-					index={value}
-					onChangeIndex={handleChangeIndex}>
-					<TabPanel value={value} index={0} dir={theme.direction}>
-						<div>
-							<StrukturKelas />
-						</div>
-					</TabPanel>
-					<TabPanel value={value} index={1} dir={theme.direction}>
-						<div>
-							<Schedule />
-						</div>
-					</TabPanel>
-				</SwipeableViews>
+				<TabPanel value={value} index={0}>
+  <StrukturKelas />
+</TabPanel>
+
+<TabPanel value={value} index={1}>
+  <Schedule />
+</TabPanel>
 			</Box>
 		</div>
 	)
